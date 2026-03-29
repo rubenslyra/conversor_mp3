@@ -3,7 +3,10 @@
 venv/
 
 video-tutorial/
+.video-tutorial/
+
 docs/
+.docs/
 
 # Python
 __pycache__/
