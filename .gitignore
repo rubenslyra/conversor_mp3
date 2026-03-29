@@ -11,6 +11,7 @@ __pycache__/
 
 # VSCode
 .vscode/
+.idea/
 
 # Sistema
 .DS_Store
@@ -41,3 +42,15 @@ build/
 # Config locais
 .env
 .env.*
+.envrc
+*.local
+*.secret
+secrets.*
+
+# Credenciais e chaves
+*.pem
+*.key
+*.p12
+*.crt
+id_rsa
+id_ed25519

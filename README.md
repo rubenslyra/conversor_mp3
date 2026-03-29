@@ -12,6 +12,10 @@ A ideia foi construir duas aplicações complementares:
 
 Ambos foram desenvolvidos com uma abordagem prática, pensando em evoluir para um produto mais robusto no futuro.
 
+## Preview
+
+<img src="docs/images/app-thumb.png" alt="Captura de tela da aplicação em funcionamento" width="720" />
+
 ---
 
 ## 🚀 Funcionalidades

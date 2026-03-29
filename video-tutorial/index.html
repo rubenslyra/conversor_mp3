@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Tutorial | RL Audio + RL Video Downloader</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --bg-soft: rgba(15, 23, 42, 0.78);
+        --card: rgba(9, 14, 28, 0.84);
+        --line: rgba(148, 163, 184, 0.18);
+        --text: #e5eefc;
+        --muted: #97a6ba;
+        --accent: #ff7a18;
+        --accent-2: #facc15;
+        --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(250, 204, 21, 0.16), transparent 24%),
+          radial-gradient(circle at top right, rgba(255, 122, 24, 0.22), transparent 26%),
+          linear-gradient(135deg, #020617 0%, #111827 48%, #1e293b 100%);
+      }
+
+      .shell {
+        width: min(1120px, calc(100% - 32px));
+        margin: 32px auto;
+        padding: 28px;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background: var(--bg-soft);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(14px);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 28px;
+        align-items: start;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 16px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(255, 122, 24, 0.12);
+        color: #ffd7b2;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0 0 16px;
+        font-size: clamp(2rem, 3vw, 3.6rem);
+        line-height: 1.02;
+      }
+
+      .lead {
+        margin: 0 0 22px;
+        max-width: 58ch;
+        color: var(--muted);
+        font-size: 1.03rem;
+        line-height: 1.7;
+      }
+
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 24px;
+      }
+
+      .pill {
+        padding: 10px 14px;
+        border: 1px solid rgba(250, 204, 21, 0.18);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.03);
+        color: #fff3c4;
+        font-size: 0.92rem;
+      }
+
+      .card {
+        padding: 22px;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: var(--card);
+      }
+
+      .video-card {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .video-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(250, 204, 21, 0.08), transparent 38%);
+        pointer-events: none;
+      }
+
+      video {
+        width: 100%;
+        display: block;
+        border-radius: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: #000;
+      }
+
+      h2 {
+        margin: 0 0 14px;
+        font-size: 1.05rem;
+      }
+
+      .stack,
+      .highlights {
+        display: grid;
+        gap: 12px;
+      }
+
+      .item {
+        padding: 14px 16px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      .item strong {
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      .item span {
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .footer-note {
+        margin-top: 20px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+
+        .shell {
+          width: min(100% - 20px, 1120px);
+          margin: 10px auto;
+          padding: 18px;
+          border-radius: 22px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <span class="eyebrow">Video Tutorial</span>
+          <h1>RL Audio + RL Video Downloader</h1>
+          <p class="lead">
+            Uma vitrine em HTML para apresentar o tutorial do projeto com foco em
+            conversão de áudio, download de vídeos, automação com Python e integração
+            com ferramentas de mídia.
+          </p>
+
+          <div class="meta">
+            <span class="pill">Python 3.12+</span>
+            <span class="pill">CustomTkinter</span>
+            <span class="pill">FFmpeg + FFprobe</span>
+            <span class="pill">yt-dlp</span>
+            <span class="pill">MoviePy</span>
+          </div>
+
+          <div class="card highlights">
+            <div class="item">
+              <strong>O que o vídeo mostra</strong>
+              <span>
+                Demonstração da interface, fluxo de conversão de mídia, corte de áudio,
+                download de vídeos por URL e extração de MP3.
+              </span>
+            </div>
+            <div class="item">
+              <strong>O que foi construído</strong>
+              <span>
+                Duas aplicações desktop em Python com separação entre UI, validações,
+                regras de negócio e integração com ferramentas externas.
+              </span>
+            </div>
+            <div class="item">
+              <strong>Objetivo do projeto</strong>
+              <span>
+                Evoluir de scripts simples para uma base mais próxima de um produto real,
+                com foco em arquitetura, usabilidade e processamento de mídia.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card video-card">
+          <video controls preload="metadata">
+            <source src="./2026-03-29 16-03-19.mp4" type="video/mp4" />
+            Seu navegador não suporta reprodução de vídeo em HTML5.
+          </video>
+          <p class="footer-note">
+            Arquivo carregado localmente: <code>video-tutorial/2026-03-29 16-03-19.mp4</code>
+          </p>
+        </div>
+      </section>
+
+      <section style="margin-top: 28px;" class="card">
+        <h2>Stack utilizada no projeto</h2>
+        <div class="stack">
+          <div class="item">
+            <strong>CustomTkinter</strong>
+            <span>Interface desktop moderna para organizar a experiência de uso da aplicação.</span>
+          </div>
+          <div class="item">
+            <strong>FFmpeg e FFprobe</strong>
+            <span>Conversão, extração, leitura de metadados e operações com mídia.</span>
+          </div>
+          <div class="item">
+            <strong>yt-dlp</strong>
+            <span>Download de conteúdo por URL com suporte ao fluxo de extração de áudio.</span>
+          </div>
+          <div class="item">
+            <strong>MoviePy</strong>
+            <span>Complemento para manipulação de mídia dentro da base em Python.</span>
+          </div>
+          <div class="item">
+            <strong>threading</strong>
+            <span>Execução em background para manter a interface responsiva durante o processamento.</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
