@@ -2,6 +2,9 @@
 .venv/
 venv/
 
+video-tutorial/
+docs/
+
 # Python
 __pycache__/
 *.pyc
